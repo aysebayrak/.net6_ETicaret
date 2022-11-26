@@ -1,15 +1,18 @@
+using ETicaretAPI.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddPersistenceServices();
+
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -23,3 +26,25 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+
+/*
+ * NOTLAR  :
+ * IOC  için serviceregistration.cs oluþturduk ve using    Microsoft.Extensions.DependencyInjection; yi nuget ettik.
+ * Yazdýðýmýz metodu prgram.cs de tetiklemem lazým. Ve persistence katmaný içindeki tüm servisler IOC containere eklenmiþ bir þekilde elde etmiþ oluyoruz.
+ * 
+ * 
+ * 
+ */
+
+/* KATMANLAR NOTLAR :
+ * Domain ve Application katmanlarý Core klasöründe oluþturulur. Çünkü; bunlar çekirdelk katmanlar.
+ * 
+ * Servislerimizi yazdýðýmýz infrastructure ve persistence katmanlrý ÝNTRASTRUCE klasörü içinde oluþturulur.
+ * 
+ * 
+ * 
+ */
+
+
