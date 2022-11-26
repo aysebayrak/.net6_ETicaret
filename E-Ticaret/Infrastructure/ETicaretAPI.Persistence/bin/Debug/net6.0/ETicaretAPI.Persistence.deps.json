@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ETicaretAPI.Persistence/1.0.0": {
+        "runtime": {
+          "ETicaretAPI.Persistence.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ETicaretAPI.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

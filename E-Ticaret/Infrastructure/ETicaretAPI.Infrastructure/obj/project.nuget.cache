@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AUosSTqeco5CChozjS7Y+WWbIHn8vP7iNDSZRVZMLf66PIGz4H23eaqpFvG4JNl7npI3bYRByd+hYlaqkUNLfA==",
+  "success": true,
+  "projectFilePath": "C:\\projeler_ab\\Entity-Framework-Core-onionart\\E-Ticaret\\Infrastructure\\ETicaretAPI.Infrastructure\\ETicaretAPI.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ayseb\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
