@@ -42,6 +42,10 @@ app.Run();
  * Domain ve Application katmanlarý Core klasöründe oluþturulur. Çünkü; bunlar çekirdelk katmanlar.
  * 
  * Servislerimizi yazdýðýmýz infrastructure ve persistence katmanlrý ÝNTRASTRUCE klasörü içinde oluþturulur.
+ * Veri tabaný ile ilgili Verinin gelmesi ile ilgili kodlar persistence ya yazýlýr. Context gibi
+ * 
+ * DbContextimde eklediðim dbsetleri  ýoc containere eklemem lazým.
+ * Buný serviceregistration dan yapacaðým.
  * 
  * 
  * 
