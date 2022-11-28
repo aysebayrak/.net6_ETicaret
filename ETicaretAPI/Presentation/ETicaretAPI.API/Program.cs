@@ -29,10 +29,40 @@ app.Run();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  * NOTLAR  :
  * IOC  için serviceregistration.cs oluþturduk ve using    Microsoft.Extensions.DependencyInjection; yi nuget ettik.
  * Yazdýðýmýz metodu prgram.cs de tetiklemem lazým. Ve persistence katmaný içindeki tüm servisler IOC containere eklenmiþ bir þekilde elde etmiþ oluyoruz.
+ * 
+ * 
+ * 
+ */
+
+/*
+ * Senkron Ve Asenkron Programlama:
+ * 
+ *Senkron :yazýlýþ sýrasýna göre yukarýdan aþaðýya doðru iþleyerek ilerler.
+ * her þeyi sýrayla iþlemesi ve her bir iþlemin birbirini beklemesi yeri geldiðinde programýmýz
+ * çok yavaþlatabilir, hatta iþlem bitene kadar durdurabilir. 
+ * 
+ * 
+ * Asenkron : akýþýnýn sýrayla iþlemediði, iþlemlerin birbirini beklemediði, kod akýþýnýn iþlem 
+ * durumlarýna göre devam ettiði programlamaya Asenkron Programlama denir.
  * 
  * 
  * 
@@ -46,9 +76,26 @@ app.Run();
  * 
  * DbContextimde eklediðim dbsetleri  ýoc containere eklemem lazým.
  * Buný serviceregistration dan yapacaðým.
- * 
- * 
- * 
  */
+
+/* Change Tracker : ef core aracýlýðýyla veri tabanýndan gelen  veriyi takip eden mekanizma.
+* dbcontext üzerinden sorgulama neticesinde gelen datalalrýn, üzrinde de yapýlan deðiþikleri ef bu mekanizda sayesinde anlýyor.
+* Takip edilen nesne üzerinde yapýlan deðiþikliði deleted, update ..  olup olmadýðýný anlayan mekanizma.
+* EF core ile yapýlan tüm sorgular da default olarak change tracker devreye girer. Ve datalar takip edilir.
+* GetAll gibi sadece son kullanýcýya göstermek  için çekilen veriler yani üzedinde update deleted gibi iþlemler yapmayacaksam üzeriden tracking operasyonunun olmasý mantýklý deðil. Bu olay maliyetlidir ve bazý noktalarda törpülememiz  gerek. Bunun için optimizasyon yapalým.
+* 
+* 
+* Tracking devre dýþý býrakýldýðinda yapýlan deðiþiklilker veri tabanýna  kaydedilmeyecektir.
+* 
+*/
+
+
+/* IQueryable ise LINQ for Database için yani veritabanýndan sorgulanan deðerler için kullanýlýyor.
+* IEnumerable LINQ for Objects için, yani hafýzadaki List , dizi vs. sorgulamasý sonucunda elde edilecek deðerler için kullanýlýyor.
+* 
+* 
+* 
+* 
+*/
 
 
