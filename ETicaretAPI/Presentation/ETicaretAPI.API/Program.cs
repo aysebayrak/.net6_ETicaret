@@ -93,9 +93,24 @@ app.Run();
 /* IQueryable ise LINQ for Database için yani veritabanýndan sorgulanan deðerler için kullanýlýyor.
 * IEnumerable LINQ for Objects için, yani hafýzadaki List , dizi vs. sorgulamasý sonucunda elde edilecek deðerler için kullanýlýyor.
 * 
-* 
-* 
-* 
+
 */
+
+/* 
+ * INTERCEPTER:
+ * Baþlangýcý  ve bitiþi belli olan iþte araya girmeye denir.
+ * Gelen datayý creatdate,update date  Datetimre.UtcNow  ver, yani otomatik doldur.
+ * Ve yoluna devam et.
+ * Bunlarý  merkezi bir konuma taþýayacaðýz.
+ * Context içerisinde  SaveChangesAsync   ile yapalým. (repositýry de kullandýðýmýz SaveChangesAsync ile )
+ * Gelen isteklerde yani insert ve update, de insert ise  creadetdate, update ise update kolanlarýný doldur diyeceðiz.
+ * 
+ * Kod içerisinde ChangeTracker ile deðiþklik yapýlan yada yeni eklenen veriyi yakalayabiliyoruz.
+ * ChangeTracker.Entries = Entries ile gelen girdileri yakalýyoruz.
+ * 
+ * 
+ * 
+ */
+
 
 
