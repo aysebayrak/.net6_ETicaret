@@ -1,14 +1,20 @@
+using ETicaretAPI.Application.Validators.Products;
+using ETicaretAPI.Infrastructure.Filters;
 using ETicaretAPI.Persistence;
+using FluentValidation.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddPersistenceServices();
 builder.Services.AddCors(options => options.AddDefaultPolicy(policy=>
-   policy.WithOrigins("http://localhost:4200/", "https://localhost:4200/").AllowAnyHeader().AllowAnyMethod()
+   policy.WithOrigins("http://localhost:4200", "https://localhost:4200").AllowAnyHeader().AllowAnyMethod()
 ));
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>())
+      .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>())
+      .ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -101,8 +107,7 @@ app.Run();
 
 */
 
-/* 
- * INTERCEPTER:
+/*   INTERCEPTER:
  * Baþlangýcý  ve bitiþi belli olan iþte araya girmeye denir.
  * Gelen datayý creatdate,update date  Datetimre.UtcNow  ver, yani otomatik doldur.
  * Ve yoluna devam et.
@@ -119,8 +124,32 @@ app.Run();
 /*  CORS
  *Program.cs de yapalým.  
  *
+ */
+
+/* HttpClient Servisi 
+ * 
+ * ActionResult, Controller yapýsýna gelen isteklere göre iþlem yapýp kullanýcýya View ile isteðe göre bilgileri geri döndüren metotlara verilen isimdir
+ * 
  * 
  */
 
+/* Controllerda dýþ dünyadan geelcek olan veriler için entiityler kullanýlmaz.       
+ * Bunun için view model ile karþýlayacaðým.Dýþarýdan gelecek olan nesneleri(product ..) view modelde entiityle döünüþtürüp vereceðim.
+ * Ýlerde bunu request design patern ile yapýlacak.
+ * 
+ * 
+ */
+
+/*  Fluent Validation Ýle ValidationFilter 
+ * 
+ * Validation oluþturduktan sonra uygulamaya, sen bu valýdationlarý  
+ * kullan demem lazým. Onun için bunu Apý ye söylemem lazým. Program cs de
+ * AddControllers(); servisimiz var. Bunun sonraýnda yap. Eklemeyi.
+ * 
+ * ModelState.Isvalid : model belirlenen kurallara uymuyorsa modeli view’a tekrar gönderdik.
+ * 
+ * 
+ * Yazmýþ olduðumuz filter i devreye sokmak için program.cs de yaz.
+ */
 
 

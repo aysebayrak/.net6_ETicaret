@@ -59,3 +59,8 @@ C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug
 C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.dll
+C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.Infrastructure.dll
+C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.Infrastructure.pdb
