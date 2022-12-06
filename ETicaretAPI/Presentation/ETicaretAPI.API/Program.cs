@@ -153,3 +153,13 @@ app.Run();
  */
 
 
+/* Record,
+ * bir objenin topyekün olarak sabit/deðiþmez olarak kalmasýný saðlamakta ve bu durumu güvence altýna almaktadýr. Böylece bu obje, artýk deðeri deðiþmeyeceðinden dolayý esasýnda objeden ziyade bir deðer gözüyle bakýlan bir yapýya dönüþmektedir.
+ * 
+ */
+
+/*FromBody  - FromQuery:
+ *FromBody: Http request inin body'si içerisinde gönderilen parametreleri okumak için kullanýlýr.
+FromQuery: Url içerisine gömülen parametreleri okumak için kullanýlan attribute dur.
+*/
+
