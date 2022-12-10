@@ -64,3 +64,4 @@ C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug
 C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.Infrastructure.dll
 C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\ETicaretAPI.Infrastructure.pdb
+C:\projeler_ab\.net6_ETicaret\ETicaretAPI\Presentation\ETicaretAPI.API\bin\Debug\net6.0\System.Web.Cors.dll

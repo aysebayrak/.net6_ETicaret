@@ -17,8 +17,6 @@ namespace ETicaretAPI.API.Controllers
         readonly private IProductReadRepository _productReadRepository;
 
 
-
-
         public ProductsController(
             IProductReadRepository productReadRepository, 
             IProductWriteRepository productWriteRepository)
@@ -29,24 +27,30 @@ namespace ETicaretAPI.API.Controllers
         }
 
 
+        //[HttpGet]
+        //public async Task<ActionResult> Get(Pagination pagination)
+        //{
+        //    var totalCount = _productReadRepository.GetAll(false).Count();
+        //    var products =   _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
+        //    {
+        //        p.Id,
+        //        p.Name,
+        //        p.Stock,
+        //        p.Price,
+        //        p.CreatedDate,
+        //        p.UpdatedDate
+        //    });
+        //   return Ok(new
+        //   {
+        //       totalCount,
+        //       products
+        //   });
+        //}
+
         [HttpGet]
-        public async Task<ActionResult> Get(Pagination pagination)
+        public async Task<IActionResult> Get()
         {
-            var totalCount = _productReadRepository.GetAll(false).Count();
-            var products =   _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
-            {
-                p.Id,
-                p.Name,
-                p.Stock,
-                p.Price,
-                p.CreatedDate,
-                p.UpdatedDate
-            });
-           return Ok(new
-           {
-               totalCount,
-               products
-           });
+            return Ok(_productReadRepository.GetAll(false));
         }
 
         [HttpGet("{id}")]
@@ -69,8 +73,8 @@ namespace ETicaretAPI.API.Controllers
                  Stock = model.Stock
             });
             await _productWriteRepository.SaveAsync();
-             return StatusCode((int)HttpStatusCode.Created);
-
+             return StatusCode((int)HttpStatusCode.Created); // 201 DÖNMESİ İÇİN
+ 
         }
 
         [HttpPut]
