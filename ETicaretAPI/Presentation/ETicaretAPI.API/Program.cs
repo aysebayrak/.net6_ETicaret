@@ -14,7 +14,7 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(policy=>
 builder.Services.AddControllers(options => options.Filters.Add<ValidationFilter>())
       .AddFluentValidation(configuration => configuration.RegisterValidatorsFromAssemblyContaining<CreateProductValidator>())
       .ConfigureApiBehaviorOptions(options => options.SuppressModelStateInvalidFilter = true);
-
+        //mevcut olan filter larý baþtýr. Benim eklediklerim olacak.
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -142,6 +142,11 @@ app.Run();
 
 /*  Fluent Validation Ýle ValidationFilter 
  * 
+ * Validation yapabilmek için ;
+ *   FluentValidation,
+ *   FluentValidationAspNetCore,
+ *   FluentValidation.DependencyInjectionExtebsion   paketleri yüklenecek.
+ * 
  * Validation oluþturduktan sonra uygulamaya, sen bu valýdationlarý  
  * kullan demem lazým. Onun için bunu Apý ye söylemem lazým. Program cs de
  * AddControllers(); servisimiz var. Bunun sonraýnda yap. Eklemeyi.
@@ -150,6 +155,10 @@ app.Run();
  * 
  * 
  * Yazmýþ olduðumuz filter i devreye sokmak için program.cs de yaz.
+ * 
+ * 
+ * 
+ * 
  */
 
 

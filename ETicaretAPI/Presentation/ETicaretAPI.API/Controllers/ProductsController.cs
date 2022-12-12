@@ -27,31 +27,26 @@ namespace ETicaretAPI.API.Controllers
         }
 
 
-        //[HttpGet]
-        //public async Task<ActionResult> Get(Pagination pagination)
-        //{
-        //    var totalCount = _productReadRepository.GetAll(false).Count();
-        //    var products =   _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
-        //    {
-        //        p.Id,
-        //        p.Name,
-        //        p.Stock,
-        //        p.Price,
-        //        p.CreatedDate,
-        //        p.UpdatedDate
-        //    });
-        //   return Ok(new
-        //   {
-        //       totalCount,
-        //       products
-        //   });
-        //}
-
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult> Get([FromQuery] Pagination pagination)
         {
-            return Ok(_productReadRepository.GetAll(false));
+            var totalCount = _productReadRepository.GetAll(false).Count();
+            var products = _productReadRepository.GetAll(false).Skip(pagination.Page * pagination.Size).Take(pagination.Size).Select(p => new
+            {
+                p.Id,
+                p.Name,
+                p.Stock,
+                p.Price,
+                p.CreatedDate,
+                p.UpdatedDate
+            });
+            return Ok(new
+            {
+                totalCount,
+                products
+            });
         }
+
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
